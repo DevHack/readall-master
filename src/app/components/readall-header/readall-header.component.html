@@ -1,0 +1,15 @@
+<header class="u-clearfix u-header u-sticky u-white u-header" id="sec-cd54">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <a href="#" class="u-image u-logo u-image-1" data-image-width="216" data-image-height="151">
+      <img src="../../../assets/images/Untitled-3.jpg" class="u-logo-image u-logo-image-1" data-image-width="104">
+    </a>
+    <div *ngIf="route.snapshot.url.toString() === ''" class="dropdown">
+      <a
+        class="dropbtn u-btn u-btn-round u-button-style u-hover-palette-4-base u-palette-3-base u-radius-50 u-btn-1">Login/signup</a>
+      <div class="dropdown-content">
+        <a *ngFor="let role of roles" (click)="doLogin(role)">login as {{role}}</a>
+      </div>
+    </div>
+    <a (click)="doSignOut()" *ngIf="route.snapshot.url.toString() !== ''" class="dropbtn u-btn u-btn-round u-button-style u-hover-palette-4-base u-palette-3-base u-radius-50 u-btn-1">Sign out</a>
+  </div>
+</header>
